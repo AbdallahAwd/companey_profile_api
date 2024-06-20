@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('work_experience', function (Blueprint $table) {
+        Schema::create('contacts', function (Blueprint $table) {
             $table->id();
-            $table->string('title_en');
-            $table->string('title_ar');
-            $table->text('description_en');
-            $table->text('description_ar');
-            $table->string('image');
+            $table->string("adderss");
+            $table->string("tel");
+            $table->string("email");
+            $table->string("lat,lng");
+            $table->enum("type", ["enquire", "cert", "other"])->default("enquire");
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('work_experiences');
+        Schema::dropIfExists('contacts');
     }
 };

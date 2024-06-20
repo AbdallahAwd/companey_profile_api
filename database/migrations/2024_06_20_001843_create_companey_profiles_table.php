@@ -11,14 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('companey_profile', function (Blueprint $table) {
+        Schema::create('companey_profiles', function (Blueprint $table) {
             $table->id();
-            $table->string('company_profile_en');
-            $table->string('company_profile_ar');
-            $table->string('business_interest_en');
-            $table->string('business_interest_ar');
-            $table->string('organization_desc_en');
-            $table->string('organization_desc_ar');
+            $table->string('main_image');
+            $table->text('company_profile_en');
+            $table->text('company_profile_ar');
+            $table->text('business_interest_en');
+            $table->text('business_interest_ar');
+            $table->text('organization_desc_en');
+            $table->text('organization_desc_ar');
+            $table->string('organization_image');
             $table->timestamps();
         });
     }

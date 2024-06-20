@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class WorkExperience extends Model
 {
     use HasFactory;
+    protected $table = 'work_experience'; // Specify the table name
+    // protected $fillable = ['name', 'description']; // Allow mass assignment
+
 }
