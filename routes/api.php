@@ -11,4 +11,6 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 });
 
-Route::get('/', [CompanyProfile::class, 'index']);
+Route::get('/{locale}', [CompanyProfile::class, 'index']);
+Route::post('/update/company/{id}', [CompanyProfile::class, 'update']);
+Route::post('/store/company', [CompanyProfile::class, 'store']);
