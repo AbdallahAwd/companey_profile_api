@@ -5,15 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Contact extends Model
+class Gallary extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     protected $fillable = [
-        'adderss',
-        'tel',
-        'email',
-        'lat,lng',
-        'type',
+        'title_en', 'title_ar', 'image',
     ];
 }

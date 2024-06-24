@@ -5,15 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Contact extends Model
+class Training extends Model
 {
     use HasFactory;
-
     protected $fillable = [
-        'adderss',
-        'tel',
-        'email',
-        'lat,lng',
-        'type',
+        'description_en',
+        'description_ar',
+        'image',
     ];
 }

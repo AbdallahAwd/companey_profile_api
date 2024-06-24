@@ -135,4 +135,5 @@ class CompanyProfile extends Controller
             'message' => 'Company profile updated successfully',
         ], 200);
     }
+
 }
