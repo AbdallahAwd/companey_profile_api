@@ -42,9 +42,9 @@ class CompanyProfile extends Controller
             ],
         ];
 
-        $output['company_info'][$locale === 'ar' ? 'company_profile' : 'company_profile_en'] = $companyProfile[$locale === 'ar' ? 'company_profile_ar' : 'company_profile_en'];
-        $output['company_info'][$locale === 'ar' ? 'business_interest' : 'business_interest_en'] = $companyProfile[$locale === 'ar' ? 'business_interest_ar' : 'business_interest_en'];
-        $output['company_info'][$locale === 'ar' ? 'organization_desc' : 'organization_desc_en'] = $companyProfile[$locale === 'ar' ? 'organization_desc_ar' : 'organization_desc_en'];
+        $output['company_info']['company_profile'] = $companyProfile[$locale === 'ar' ? 'company_profile_ar' : 'company_profile_en'];
+        $output['company_info']['business_interest'] = $companyProfile[$locale === 'ar' ? 'business_interest_ar' : 'business_interest_en'];
+        $output['company_info']['organization_desc'] = $companyProfile[$locale === 'ar' ? 'organization_desc_ar' : 'organization_desc_en'];
 
         $output['work_experience'] = $workExperiences->map(function ($experience) use ($locale) {
             return [
