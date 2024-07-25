@@ -32,13 +32,13 @@ class CompanyProfile extends Controller
                 'organization_image' => $companyProfile->organization_image,
                 'created_at' => $companyProfile->created_at,
                 'updated_at' => $companyProfile->updated_at,
-            ],
-            'work_experience' => [],
-            'contact' => [
-                'id' => $contact->id,
-                'lat_lng' => $contact->lat_lng,
-                'created_at' => $contact->created_at,
-                'updated_at' => $contact->updated_at,
+                'work_experience' => [],
+                'contact' => [
+                    'id' => $contact->id,
+                    'lat_lng' => $contact->lat_lng,
+                    'created_at' => $contact->created_at,
+                    'updated_at' => $contact->updated_at,
+                ],
             ],
         ];
 
@@ -46,7 +46,7 @@ class CompanyProfile extends Controller
         $output['company_info']['business_interest'] = $companyProfile[$locale === 'ar' ? 'business_interest_ar' : 'business_interest_en'];
         $output['company_info']['organization_desc'] = $companyProfile[$locale === 'ar' ? 'organization_desc_ar' : 'organization_desc_en'];
 
-        $output['work_experience'] = $workExperiences->map(function ($experience) use ($locale) {
+        $output['company_info']['work_experience'] = $workExperiences->map(function ($experience) use ($locale) {
             return [
                 'id' => $experience->id,
                 'title' => $experience["title_$locale"],
@@ -57,7 +57,7 @@ class CompanyProfile extends Controller
             ];
         });
 
-        $output['contact'] = $contact->only(['adderss', 'tel', 'email', 'lat,lng', 'type']);
+        $output['company_info']['contact'] = $contact->only(['adderss', 'tel', 'email', 'lat,lng', 'type']);
 
         return response()->json($output);
     }
